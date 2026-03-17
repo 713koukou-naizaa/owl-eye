@@ -1,0 +1,3 @@
+devices:
+  webcam_device: "/dev/video0"
+  audio_device_index: 0

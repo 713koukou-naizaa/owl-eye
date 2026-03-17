@@ -1,0 +1,15 @@
+[Unit]
+Description=Owl-Eye Service 
+After=graphical.target
+
+[Service]
+Type=simple
+ExecStart=python -m owl_eye.main
+Restart=always
+User=naizer
+WorkingDirectory=/home/naizer/tamanegi/git/713koukou-naizaa/owl-eye
+StandardOutput=append:/tmp/owl_eye.log
+StandardError=append:/tmp/owl_eye.log
+
+[Install]
+WantedBy=multi-user.target
