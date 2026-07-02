@@ -1,0 +1,15 @@
+[Unit]
+Description=Owl-Eye Service 
+After=graphical.target
+
+[Service]
+Type=simple
+ExecStart=python -m main
+Restart=always
+User=naizer
+WorkingDirectory=/path/to/owl-eye
+StandardOutput=append:/tmp/log
+StandardError=append:/tmp/log
+
+[Install]
+WantedBy=multi-user.target

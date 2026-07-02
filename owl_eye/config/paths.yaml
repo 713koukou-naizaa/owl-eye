@@ -1,3 +1,0 @@
-paths:
- temp_dir: "/tmp/owl_eye"
- log_file: "/var/log/owl_eye.log"

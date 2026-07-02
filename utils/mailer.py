@@ -1,11 +1,11 @@
 import smtplib
 from email.message import EmailMessage
-from owl_eye.config.config import SMTP_SERVER, SMTP_PORT, SMTP_USERNAME, SMTP_PASSWORD, EMAIL_RECIPIENT, EMAIL_SENDER
+from config.config import settings
 
 def send_email(subject, body, attachments=[]):
     msg = EmailMessage()
-    msg['From'] = EMAIL_SENDER
-    msg['To'] = EMAIL_RECIPIENT
+    msg['From'] = settings.EMAIL_SENDER
+    msg['To'] = settings.EMAIL_RECIPIENT
     msg['Subject'] = subject
     msg.set_content(body)
 
@@ -19,9 +19,9 @@ def send_email(subject, body, attachments=[]):
             continue
 
     try:
-        with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
+        with smtplib.SMTP(settings.SMTP_SERVER, settings.SMTP_PORT) as server:
             server.starttls()
-            server.login(SMTP_USERNAME, SMTP_PASSWORD)
+            server.login(settings.SMTP_USERNAME, settings.SMTP_PASSWORD)
             server.send_message(msg)
             return True
     except Exception:

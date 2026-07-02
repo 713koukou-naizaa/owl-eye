@@ -1,5 +1,5 @@
 import logging
-from owl_eye.config.config import LOG_FILE
+from config.config import settings
 
 def setup_logger():
     logger = logging.getLogger("owl_eye")
@@ -8,7 +8,7 @@ def setup_logger():
     formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 
     # File handler
-    fh = logging.FileHandler(LOG_FILE)
+    fh = logging.FileHandler(settings.LOG_FILE)
     fh.setFormatter(formatter)
     logger.addHandler(fh)
 

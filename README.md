@@ -17,19 +17,20 @@ owl_eye/
 ├── README.md                 # This file
 ├── main.py                   # Main application entry point and control loop
 ├── logger.py                 # Logging configuration and setup
+├── log                       # Log file
 ├── requirements.txt          # Python dependencies
 ├── config/                   # Configuration files and settings
-│   ├── config.py            # Main configuration loader and environment variables
-│   ├── devices.yaml         # Device settings (webcam, audio)
-│   ├── intervals.yaml       # Timing configurations
-│   └── paths.yaml           # File path configurations
+│   ├── config.py             # Main configuration loader and environment variables
+│   ├── devices.yaml          # Device settings (webcam, audio)
+│   ├── intervals.yaml        # Timing configurations
+│   └── paths.yaml            # File path configurations
 ├── utils/                    # Utility modules
-│   ├── capture.py           # Webcam photo and audio recording
-│   ├── screenshot.py        # Screen capture functionality
-│   ├── system_info.py       # System information collection
-│   └── mailer.py            # Email sending functionality
+│   ├── capture.py            # Webcam photo and audio recording
+│   ├── screenshot.py         # Screen capture functionality
+│   ├── system_info.py        # System information collection
+│   └── mailer.py             # Email sending functionality
 └── systemd/                  # System service configuration
-    └── auto-recorder.service
+    └── auto-recorder.service # Systemd service file
 ```
 
 ### Key Components

@@ -1,9 +1,9 @@
 import time
 import signal
 import os
-from owl_eye.logger import setup_logger
-from owl_eye.utils import system_info, capture, screenshot, mailer
-from owl_eye.config.config import CAPTURE_INTERVAL
+from logger import setup_logger
+from utils import system_info, capture, screenshot, mailer
+from config.config import settings
 
 logger = setup_logger()
 running = True
@@ -21,7 +21,7 @@ def main_loop():
     while running:
         
         try:
-            time.sleep(CAPTURE_INTERVAL)
+            time.sleep(settings.CAPTURE_INTERVAL)
 
             photo_file = capture.take_photo()
             audio_file = capture.record_audio()
@@ -53,7 +53,7 @@ def main_loop():
 
         except Exception as e:
             logger.exception(f"Error in main loop: {e}")
-            time.sleep(CAPTURE_INTERVAL)
+            time.sleep(settings.CAPTURE_INTERVAL)
 
 if __name__ == "__main__":
     main_loop()
