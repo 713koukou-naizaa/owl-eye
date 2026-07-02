@@ -28,8 +28,9 @@ deactivate
 # Create user systemd directory if doesn't exist
 mkdir -p ~/.config/systemd/user/
 
-# Copy service file to correct location
-cp systemd/owl-eye.target.example ~/.config/systemd/user/owl-eye.target
+# Copy service and target files to correct location
+cp systemd/owl-eye.service ~/.config/systemd/user/
+cp systemd/owl-eye.target ~/.config/systemd/user/
 
 # 8. Reload systemd for user, and enable service to start on login
 systemctl --user daemon-reload

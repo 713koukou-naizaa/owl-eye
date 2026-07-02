@@ -1,5 +1,5 @@
 [Unit]
-Description=Owl-Eye Service 
+Description=Owl-Eye Service
 Wants=graphical-session.target
 After=graphical-session.target
 
@@ -10,6 +10,3 @@ Restart=always
 WorkingDirectory=/opt/owl-eye
 StandardOutput=append:/opt/owl-eye/log
 StandardError=append:/opt/owl-eye/log
-
-[Install]
-WantedBy=graphical-session.target

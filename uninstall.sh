@@ -3,15 +3,25 @@
 echo "Starting the uninstallation of Owl-Eye..."
 
 # 1. Stop systemd user service if running
-echo "--> Stopping the Owl-Eye service..."
+echo "--> Stopping the Owl-Eye target and service..."
 systemctl --user stop owl-eye.target
+systemctl --user stop owl-eye.service
 
 # 2. Disable systemd user service to prevent it from starting on boot/login
-echo "--> Disabling the Owl-Eye service..."
+echo "--> Disabling the Owl-Eye target..."
 systemctl --user disable owl-eye.target
 
 # 3. Remove systemd service file from user's config directory
-SERVICE_FILE=~/.config/systemd/user/owl-eye.target
+TARGET_FILE=~/.config/systemd/user/owl-eye.target
+SERVICE_FILE=~/.config/systemd/user/owl-eye.service
+
+if [ -f "$TARGET_FILE" ]; then
+    echo "--> Removing systemd target file: $TARGET_FILE"
+    rm -f "$TARGET_FILE"
+else
+    echo "--> Systemd target file not found, skipping."
+fi
+
 if [ -f "$SERVICE_FILE" ]; then
     echo "--> Removing systemd service file: $SERVICE_FILE"
     rm -f "$SERVICE_FILE"
@@ -34,4 +44,3 @@ fi
 
 echo ""
 echo "Owl-Eye has been successfully uninstalled."
-
