@@ -30,7 +30,7 @@ owl-eye/
 │   ├── system_info.py        # System information collection
 │   └── mailer.py             # Email sending functionality
 └── systemd/                  # System service configuration
-    └── auto-recorder.service # Systemd service file
+    └── owl-eye.target        # Systemd service file
 ```
 
 ### Key Components
