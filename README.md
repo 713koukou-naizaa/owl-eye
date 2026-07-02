@@ -19,6 +19,8 @@ owl-eye/
 ├── logger.py                  # Logging configuration and setup
 ├── log                        # Log file
 ├── requirements.txt           # Python dependencies
+├── install.sh                 # Install script
+├── uninstall.sh               # Uninstall script
 ├── .env.example               # .env file example
 ├── config/                    # Configuration files and settings
 │   ├── config.py              # Main configuration loader and environment variables
