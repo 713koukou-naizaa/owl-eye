@@ -1,0 +1,15 @@
+[Unit]
+Description=Owl-Eye Service 
+Wants=graphical.target
+
+[Service]
+Type=simple
+ExecStart=/opt/owl-eye/.venv/bin/python -m main
+Restart=always
+User=user
+WorkingDirectory=/opt/owl-eye
+StandardOutput=append:/opt/owl-eye/log
+StandardError=append:/opt/owl-eye/log
+
+[Install]
+WantedBy=multi-user.target

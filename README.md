@@ -13,7 +13,7 @@
 ## File Architecture
 
 ```
-owl_eye/
+owl-eye/
 ├── README.md                 # This file
 ├── main.py                   # Main application entry point and control loop
 ├── logger.py                 # Logging configuration and setup
