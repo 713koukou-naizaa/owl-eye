@@ -1,0 +1,6 @@
+[Unit]
+Description=Owl-Eye Target
+Wants=owl-eye.service
+
+[Install]
+WantedBy=default.target
